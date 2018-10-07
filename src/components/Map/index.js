@@ -22,10 +22,14 @@ export default ({data}) => (
                     'circle-color': [
                         'match',
                         ['get', 'src'],
-                        0, '#fbb03b',
-                        1, '#223b53',
-                        2, '#e55e5e',
-                        3, '#3bb2d0',
+                        0, '#A98131',
+                        1, '#3bcca8',
+                        2, '#daea66',
+                        3, '#48a90f',
+                        4, '#d34f14',
+                        5, '#C3BEBA                        ',
+                        6, '#85648A',
+                        7, '#4F84A3',
                         /* other */ '#ccc'
                     ],
                     'circle-radius': {

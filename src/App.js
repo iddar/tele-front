@@ -7,9 +7,15 @@ import SideBar from './components/SideBar'
 import './App.css';
 
 const baseUrl = "http://fae1f6a6.ngrok.io/api/v1"
-const defaultUrl = baseUrl + "/map/?time=1420092000"
+const defaultUrl = baseUrl + "/map/?time=1420092000&limit=100"
 function getData (url = defaultUrl) {
-  return fetch(url).then(res => res.json())
+  return fetch(url)
+    .then(res => res.json())
+    .then(({data, next}) => {
+      this.setState({list: data})
+      console.log(next)
+      setTimeout(getData.bind(this, next), 150);
+    })
 }
 
 class App extends Component {
@@ -21,11 +27,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getData()
-      .then(({data, next}) => {
-        this.setState({list: data})
-        console.log(data[0])
-      })
+    getData.call(this)
   }
 
   render() {
