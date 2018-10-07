@@ -35,9 +35,9 @@ function popup () {
                         }}
                         className="progress"></div>
                 </div>
-                <div>
-                    <div>{activePOPEl.required.toLocaleString('mx-ES', { style: 'currency', currency: 'MXN' })}</div>
-                    <div>{activePOPEl.current}</div>
+                <div className="amount">
+                    <div>Require: {activePOPEl.required.toLocaleString('mx-ES', { style: 'currency', currency: 'MXN' })}</div>
+                    <div>Acumulado: {activePOPEl.current.toLocaleString('mx-ES', { style: 'currency', currency: 'MXN' })}</div>
                 </div>
             </div>
         </Popup>

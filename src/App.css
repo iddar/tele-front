@@ -62,3 +62,10 @@ body {
   width: 20px;
   background: #1A1325;
 }
+
+.amount {
+  color: #1A1325;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
