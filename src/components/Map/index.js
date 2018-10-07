@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spring } from 'react-spring'
 import ReactMapboxGl, { Layer, Feature, GeoJSONLayer } from "react-mapbox-gl";
 
 const Map = ReactMapboxGl({

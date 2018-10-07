@@ -6,8 +6,8 @@ class SourcesList extends Component {
   render() {
     return (
       <div className='Sources'>
-        {this.props.sources.map((source) => (
-          <SourceItem key={source.index} item={source} />
+        {this.props.sources.map((source, idx) => (
+          <SourceItem key={idx} item={source} />
         ))}
       </div>
     )

@@ -10,7 +10,8 @@
     "react-chartjs": "git://github.com/reactjs/react-chartjs.git#chartjs-v2",
     "react-dom": "^16.5.2",
     "react-mapbox-gl": "^3.9.2",
-    "react-scripts": "2.0.4"
+    "react-scripts": "2.0.4",
+    "react-spring": "^5.9.2"
   },
   "scripts": {
     "start": "react-scripts start",

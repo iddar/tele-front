@@ -26,11 +26,13 @@ body {
 }
 
 .SideBar {
-  width: 400px;
+  width: 350px;
   background: rgba(26, 19, 37, 0.80);
   padding: 2rem;
 }
 
 .charts {
   height: 400px;
+  display: flex;
+  align-items: flex-end;
 }

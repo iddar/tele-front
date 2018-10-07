@@ -44,6 +44,6 @@ const options = {
 
 export default () => (
     <div className="charts">
-        <LineChart data={data} options={options} width="400" height="120"/>
+        <LineChart data={data} options={options} width="400" height="100"/>
     </div>
 )
