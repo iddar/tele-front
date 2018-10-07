@@ -7,7 +7,12 @@ const Map = ReactMapboxGl({
     interactive: false
 });
 
-export default ({data}) => (
+var img2 = document.createElement('img'); // Uso DOM HTMLImageElement
+img2.src = '/item.png'
+img2.height = '20'
+img2.width = '20'
+
+export default ({data, places}) => (
     <div className="Map">
         <Map
             center={[-98.440553, 23.928418]}
@@ -17,6 +22,23 @@ export default ({data}) => (
                 height: "100vh",
                 width: "100vw"
             }}>
+
+            <Layer
+                type="symbol"
+                id="marker"
+                images={
+                    ['cat', img2]
+                }
+                layout={{ "icon-image": "cat" }}>
+                {places.map((el, idx) => (
+                    <Feature
+                        key={idx}
+                        properties={el}
+                        coordinates={[el.lng, el.lat]}
+                        />
+                ))}
+            </Layer>
+
             <Layer
                 type="circle"
                 paint={{

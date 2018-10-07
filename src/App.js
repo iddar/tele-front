@@ -8,6 +8,7 @@ import './App.css';
 
 const baseUrl = "http://fae1f6a6.ngrok.io/api/v1"
 const defaultUrl = baseUrl + "/map/?time=1420092000&limit=100"
+
 function getData (url = defaultUrl) {
   return fetch(url)
     .then(res => res.json())
@@ -18,22 +19,32 @@ function getData (url = defaultUrl) {
     })
 }
 
+function getPlaces (url = 'http://fae1f6a6.ngrok.io/api/v1/centros/') {
+  return fetch(url)
+    .then(res => res.json())
+}
+
 class App extends Component {
   constructor(props, ctx) {
     super(props, ctx)
     this.state = {
-      list: []
+      list: [],
+      places: []
     }
   }
 
   componentDidMount() {
     getData.call(this)
+    getPlaces().then(({results}) => {
+      this.setState({places: results})
+    })
   }
 
   render() {
+    let {places, list} = this.state
     return (
       <div className="site">
-        <MapContent data={this.state.list} />
+        <MapContent data={list} places={places} />
         <div className="container">
           <div className="top">
             <SideBar />
