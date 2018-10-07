@@ -1,5 +1,5 @@
 body {
-  background: #1A1325;
+  background: #2B1A46;
   color: #F8D108;
 }
 
@@ -68,4 +68,59 @@ body {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.heaader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 0;
+}
+
+.contentBody {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentBody p {
+  font-size: 2em;
+  text-align: justify;
+  line-height: 3.5rem;
+  letter-spacing: -1px;
+  
+  width: 40%;
+  margin: 0 auto;
+}
+
+.contentBody .big {
+  font-weight: 600;
+  line-height: 3.8rem;
+  margin: 0 5px;
+}
+
+.contentBody.italiy {
+  font-style: italic;
+}
+
+.contentBody.Titillium {
+  font-family: 'Titillium Web', sans-serif;
+  line-height: 5rem;
+}
+.contentBody.Charmonman {
+  font-family: 'Charmonman', cursive;
+}
+.contentBody.Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+.contentBody.Indie {
+  font-family: 'Indie Flower', cursive;
+}
+
+.white {
+  background: #ffffff;
+  color: #2B1A46;
 }

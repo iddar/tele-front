@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import MapContent from './components/Map'
 import LineChart from './components/Chart'
 import SideBar from './components/SideBar'
+import Header from './components/Header'
 import './App.css';
 
 const baseUrl = "http://fae1f6a6.ngrok.io/api/v1"
@@ -43,13 +44,19 @@ class App extends Component {
 
   render() {
     let {places, list} = this.state
+
     return (
-      <div className="site">
+      <div>
+        <Header />
+
+        <div className="site">
         <MapContent data={list} places={places} />
         <div className="top">
-            <SideBar />
-          </div>
-          <LineChart />
+              <SideBar />
+            </div>
+            <LineChart />
+        </div>
+
       </div>
     );
   }
