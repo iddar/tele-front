@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spring } from 'react-spring'
-import ReactMapboxGl, { Layer, Feature, GeoJSONLayer } from "react-mapbox-gl";
+import ReactMapboxGl, { Layer, Feature, Popup } from "react-mapbox-gl";
 
 const Map = ReactMapboxGl({
     accessToken: "pk.eyJ1IjoiaWRkYXIiLCJhIjoiY2lzZmx3cnA2MDFvaDJ0dm85aGcyZDY4dSJ9.P3P-V3UGx1H5bLsaO2gtEA",
@@ -12,7 +12,39 @@ img2.src = '/item.png'
 img2.height = '20'
 img2.width = '20'
 
-export default ({data, places}) => (
+let activePOP = false
+let activePOPEl = null
+
+function popup () {
+    if (activePOPEl === null) return null
+    let progress = (activePOPEl.current * 100) / activePOPEl.required
+    return (
+        <Popup
+            coordinates={[activePOPEl.lng, activePOPEl.lat]}
+            offset={{
+            'bottom-left': [5, -5],
+            'bottom': [0, -5],
+            'bottom-right': [-5, -5]
+            }}>
+            <div className="popup">
+                <h4>{activePOPEl.name}</h4>
+                <div className="complete">
+                    <div
+                        style={{
+                            width: `${progress}%`
+                        }}
+                        className="progress"></div>
+                </div>
+                <div>
+                    <div>{activePOPEl.required.toLocaleString('mx-ES', { style: 'currency', currency: 'MXN' })}</div>
+                    <div>{activePOPEl.current}</div>
+                </div>
+            </div>
+        </Popup>
+    )
+}
+
+export default ({data =  [], places = []}) => (
     <div className="Map">
         <Map
             center={[-98.440553, 23.928418]}
@@ -35,9 +67,16 @@ export default ({data, places}) => (
                         key={idx}
                         properties={el}
                         coordinates={[el.lng, el.lat]}
+                        onClick={
+                            () => {
+                                activePOPEl = el
+                            }
+                        }
                         />
                 ))}
             </Layer>
+
+            {popup()}
 
             <Layer
                 type="circle"

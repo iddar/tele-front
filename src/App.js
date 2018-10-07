@@ -9,13 +9,14 @@ import './App.css';
 const baseUrl = "http://fae1f6a6.ngrok.io/api/v1"
 const defaultUrl = baseUrl + "/map/?time=1420092000&limit=100"
 
+const dalay = 500
+
 function getData (url = defaultUrl) {
   return fetch(url)
     .then(res => res.json())
     .then(({data, next}) => {
       this.setState({list: data})
-      console.log(next)
-      setTimeout(getData.bind(this, next), 150);
+      setTimeout(getData.bind(this, next), dalay);
     })
 }
 
@@ -37,7 +38,7 @@ class App extends Component {
     getData.call(this)
     getPlaces().then(({results}) => {
       this.setState({places: results})
-    })
+    }).catch(e => null)
   }
 
   render() {
@@ -45,12 +46,10 @@ class App extends Component {
     return (
       <div className="site">
         <MapContent data={list} places={places} />
-        <div className="container">
-          <div className="top">
+        <div className="top">
             <SideBar />
           </div>
           <LineChart />
-        </div>
       </div>
     );
   }

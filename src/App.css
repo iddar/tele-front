@@ -20,6 +20,9 @@ body {
 }
 
 .top {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: flex-end;
   height: calc(100vh - 400px);
@@ -32,7 +35,30 @@ body {
 }
 
 .charts {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
   height: 400px;
+  width: 40vw;
   display: flex;
   align-items: flex-end;
+}
+
+.popup h4 {
+  color: #1A1325;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.complete {
+  height: 15px;
+  width: 100%;
+  background: #F8D108;
+}
+
+.progress {
+  height: 15px;
+  width: 20px;
+  background: #1A1325;
 }
