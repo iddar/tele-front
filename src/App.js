@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactMapboxGl, { Layer, Feature, GeoJSONLayer } from "react-mapbox-gl";
-import logo from './logo.svg';
 import './App.css';
 
 const Map = ReactMapboxGl({
