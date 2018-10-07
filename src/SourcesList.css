@@ -1,0 +1,94 @@
+.Sources {
+  text-align: center;
+  background-color: white;
+  color: #111;
+}
+
+.SourcesContainer {
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #1D003A;
+}
+
+.SourcesNumber{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  background-color: #f8d132;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.SourcesTitle{
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-left: -10px;
+  box-shadow: 1px 1px 9px #444;
+  border-radius: 10px;
+}
+
+.SourcesTitle i{
+  font-weight: bold;
+}
+
+li{
+  list-style-type: none;
+  color: #111;
+  background-color: rgba(0, 9, 233, 0.05)
+}
+
+.SourceItemIntern {
+  display: flex;
+  height: 100px;
+}
+
+.SourceItemIntern > div{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SourceLogo{
+  max-height: 80px;
+  max-width: 160px;
+}
+
+.SourceItemIntern .SourceItemTitle{
+  font-weight: bold;
+  justify-content: left;
+}
+
+.Sources .SourceItemIntern .SourceItemAmount{
+  text-align: right;
+  margin-left: auto;
+}
+
+.Amount {
+  text-align: right;
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+  padding-right: 30px;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+li i {
+  font-size: 13px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
